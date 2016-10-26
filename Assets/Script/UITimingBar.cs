@@ -35,16 +35,14 @@ public class UITimingBar : MonoBehaviour {
 	//use in Update Func
 	private void DesidePosition()
 	{
-		long count = CalBMSCount(audioSource.time) % BMSConstants.BMS_RESOLUTION; //現在のカウント値から1小節のカウント値（０～９６００）に変換
-
-		value = Mathf.Sin((Mathf.PI / 2400) * CalBMSCount(audioSource.time));
+		value = Mathf.Sin((Mathf.PI / 2400) * CalBMSCount());
 		//transform.position = new Vector2(value * Side, transform.position.y);
 		gameObject.GetComponent<RectTransform>().position = new Vector3(startPos.x + value * Side, transform.position.y,0);
 	}
 
-	private long CalBMSCount(float time)
+	public long CalBMSCount()
 	{
-		return (long)(time * ((float)BPM / 60) * (BMSConstants.BMS_RESOLUTION / 4));
+		return (long)(audioSource.time * ((float)BPM / 60) * (BMSConstants.BMS_RESOLUTION / 4));
 
 	}
 

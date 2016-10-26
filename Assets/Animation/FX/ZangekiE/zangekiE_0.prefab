@@ -21,6 +21,7 @@ GameObject:
   - 4: {fileID: 4000013453521082}
   - 212: {fileID: 212000010005873162}
   - 95: {fileID: 95000011640399448}
+  - 114: {fileID: 114000012447620514}
   m_Layer: 0
   m_Name: zangekiE_0
   m_TagString: Untagged
@@ -58,6 +59,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000012447620514
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010489480138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12a3ee6273f8e6b4690cc22e70240e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212000010005873162
 SpriteRenderer:
   m_ObjectHideFlags: 1

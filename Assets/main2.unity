@@ -1315,7 +1315,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0caabe2487df0349af318d13c5e89e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 0000000000000000
+  attack: 0000000100010000
+  zangekiE: {fileID: 1000010489480138, guid: 57a35f4f60a75054fa31e4e454331bea, type: 2}
 --- !u!1 &771192860
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,7 +1503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621e40ba39edb4895b9674e4b77d0863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BPM: 60
+  BPM: 120
   Side: 390
   Player: {fileID: 21043873}
 --- !u!114 &898235633
