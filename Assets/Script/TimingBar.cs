@@ -63,4 +63,9 @@ public class TimingBar : MonoBehaviour {
 
         return 0;
     }
+
+    public float GetSinValue()
+    {
+        return value;
+    }
 }
