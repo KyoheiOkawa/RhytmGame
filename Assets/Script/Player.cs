@@ -6,15 +6,15 @@ public class Player : MonoBehaviour {
     public AudioClip sore;
     public AudioClip ah;
     public GameObject[] Enemy = new GameObject[3];
-    private float minimum;
-    private float maximum;
-    public float duration = 5.0f;
-    private float startTime;
+    private float minimum; //移動開始場所
+    private float maximum;//移動終了場所
+    public float duration = 5.0f;//移動の速さ
+    private float startTime;//移動の際に使う変数
 
-    public GameObject zangeki;
+    public GameObject zangeki;//斬撃エフェクト
 
-    private int eneCount = 0;
-    private bool isMoving = false;
+    private int eneCount = 0;//敵の数
+    private bool isMoving = false;//今移動中かどうか
     // Use this for initialization
     void Start () {
         startTime = Time.time;
@@ -39,8 +39,7 @@ public class Player : MonoBehaviour {
     {
         if (transform.position.x + 1 == Enemy[eneCount].transform.position.x)
         {
-            GetComponent<AudioSource>().PlayOneShot(ah);
-            GetComponent<Animator>().SetTrigger("Damage");
+			Damage ();
         }
         else if(!isMoving)
         {
@@ -65,4 +64,10 @@ public class Player : MonoBehaviour {
         GetComponent<AudioSource>().PlayOneShot(sore);
         Instantiate(zangeki, new Vector2(transform.position.x+1,transform.position.y-0.6f), Quaternion.identity);
     }
+
+	private void Damage()
+	{
+		GetComponent<AudioSource>().PlayOneShot(ah);
+		GetComponent<Animator>().SetTrigger("Damage");
+	}
 }
