@@ -4,6 +4,7 @@ using System.Collections;
 public class Enemy : MonoBehaviour {
     public bool[] attack = new bool[8];
     public GameObject zangekiE;
+	public int HP = 1;
 
 	private bool isAttack = false;
     private bool[] attackTmp = new bool[8];
@@ -61,5 +62,16 @@ public class Enemy : MonoBehaviour {
 	public bool GetIsAtttack()
 	{
 		return isAttack;
+	}
+
+	public bool Damage()
+	{
+		HP--;
+		if (HP <= 0) {
+			Destroy (this.gameObject);
+			return true;
+		}
+
+		return false;
 	}
 }

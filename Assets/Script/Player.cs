@@ -59,9 +59,10 @@ public class Player : MonoBehaviour {
     {
         if (transform.position.x + 1 == Enemy[eneCount].transform.position.x)
         {
-            Destroy(Enemy[eneCount].gameObject);
-            if(eneCount != 2)
-                eneCount++;
+			if (Enemy [eneCount].GetComponent<Enemy> ().Damage ()) {
+				if (eneCount != 2)
+					eneCount++;
+			}
         }
         GetComponent<AudioSource>().PlayOneShot(sore);
         Instantiate(zangeki, new Vector2(transform.position.x+1,transform.position.y-0.6f), Quaternion.identity);
