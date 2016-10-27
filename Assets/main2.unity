@@ -1317,6 +1317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack: 0000000100010000
   zangekiE: {fileID: 1000010489480138, guid: 57a35f4f60a75054fa31e4e454331bea, type: 2}
+  HP: 2
 --- !u!1 &771192860
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,6 +1544,20 @@ CanvasRenderer:
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: bc8e0417fb4494ca38ac4188f7f6d1c3, type: 2}
   m_PrefabInternal: {fileID: 1530324111}
+--- !u!114 &1164792196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1164792191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0caabe2487df0349af318d13c5e89e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 0000000001000000
+  zangekiE: {fileID: 1000010489480138, guid: 57a35f4f60a75054fa31e4e454331bea, type: 2}
+  HP: 3
 --- !u!1 &1166992322
 GameObject:
   m_ObjectHideFlags: 0
@@ -2493,6 +2508,20 @@ SpriteRenderer:
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: bc8e0417fb4494ca38ac4188f7f6d1c3, type: 2}
   m_PrefabInternal: {fileID: 1779009977}
+--- !u!114 &1818877097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1818877092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0caabe2487df0349af318d13c5e89e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 0100010000000000
+  zangekiE: {fileID: 1000010489480138, guid: 57a35f4f60a75054fa31e4e454331bea, type: 2}
+  HP: 1
 --- !u!1 &1841550657
 GameObject:
   m_ObjectHideFlags: 0
