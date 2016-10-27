@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour {
     public bool[] attack = new bool[8];
     public GameObject zangekiE;
 
+	private bool isAttack = false;
     private bool[] attackTmp = new bool[8];
     private int counter = 0;
 	// Use this for initialization
@@ -16,11 +17,14 @@ public class Enemy : MonoBehaviour {
 	void Update () {
         SetCounter();
 
-        if(attackTmp[counter])
-        {
-            attackTmp[counter] = false;
-            Instantiate(zangekiE, transform.position, Quaternion.identity);
-        }
+		if (attackTmp [counter]) {
+			isAttack = true;
+			attackTmp [counter] = false;
+			Instantiate (zangekiE, transform.position, Quaternion.identity);
+		} else {
+			isAttack = false;
+		}
+		Debug.Log (isAttack);
 	}
 
     private void SetCounter()
@@ -53,4 +57,9 @@ public class Enemy : MonoBehaviour {
             attackTmp[i] = attack[i];
         }
     }
+
+	public bool GetIsAtttack()
+	{
+		return isAttack;
+	}
 }

@@ -33,6 +33,8 @@ public class Player : MonoBehaviour {
                 GetComponent<Animator>().SetBool("isMove", isMoving);
             }
         }
+
+		EnemyAttackDamageCheck ();
 	}
 
     public void Move()
@@ -69,5 +71,14 @@ public class Player : MonoBehaviour {
 	{
 		GetComponent<AudioSource>().PlayOneShot(ah);
 		GetComponent<Animator>().SetTrigger("Damage");
+	}
+
+	private void EnemyAttackDamageCheck()
+	{
+		if (transform.position.x + 1 == Enemy [eneCount].transform.position.x) {
+			if (Enemy [eneCount].GetComponent<Enemy> ().GetIsAtttack ()) {
+				Damage ();
+			}
+		}
 	}
 }
