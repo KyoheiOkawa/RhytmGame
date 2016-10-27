@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour {
 		} else {
 			isAttack = false;
 		}
-		Debug.Log (isAttack);
+		//Debug.Log (isAttack);
 	}
 
     private void SetCounter()

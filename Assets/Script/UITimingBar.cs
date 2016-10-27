@@ -52,12 +52,12 @@ public class UITimingBar : MonoBehaviour {
 	{
 		if(Input.GetKeyDown(KeyCode.Space))
 		{
-			if(value <= 0.7f && value >= -0.7f)
+			if(value <= 0.6f && value >= -0.6f)
 			{
 				return 1;
 			}
 
-			if((value > 0.7f && value <= 1) || (value < -0.7f && value >= -1))
+			if((value >= 0.9f && value <= 1) || (value <= -0.9f && value >= -1))
 			{
 				return 2;
 			}
