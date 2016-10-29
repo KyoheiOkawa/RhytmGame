@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour {
 
     private void SetCounter()
     {
-        float count = GameObject.FindWithTag("Bar").GetComponent<UITimingBar>().CalBMSCount() % 9600;
+        float count = GameObject.FindWithTag("Bar").GetComponent<TimingBar>().CalBMSCount() % 9600;
 
         const int ONECOUNT = 1200;
         for (int i = 0; i < 8; i++)

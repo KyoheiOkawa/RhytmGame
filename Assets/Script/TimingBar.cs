@@ -5,16 +5,18 @@ public class TimingBar : MonoBehaviour {
     public long BPM = 120;
     public float Side; //中心からの距離（左右対称）
     public GameObject Player;
-    
+
+    private Vector2 parentPos;
     private AudioSource audioSource;//曲を流すオーディオソース
     private float value; //求めたsinの値を保管しておく
 	// Use this for initialization
 	void Start () {
-        audioSource = GameObject.Find("music").GetComponent<AudioSource>();
+        audioSource = GameObject.Find("music").GetComponent<AudioSource>();     
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        parentPos = transform.parent.position;
         DesidePosition();
         int i = Judgment();
         if(i == 1)
@@ -32,15 +34,15 @@ public class TimingBar : MonoBehaviour {
     //use in Update Func
     private void DesidePosition()
     {
-        long count = CalBMSCount(audioSource.time) % BMSConstants.BMS_RESOLUTION; //現在のカウント値から1小節のカウント値（０～９６００）に変換
+        long count = CalBMSCount() % BMSConstants.BMS_RESOLUTION; //現在のカウント値から1小節のカウント値（０～９６００）に変換
 
-        value = Mathf.Sin((Mathf.PI / 2400) * CalBMSCount(audioSource.time));
-        transform.position = new Vector2(value * Side, transform.position.y);
+        value = Mathf.Sin((Mathf.PI / 2400) * CalBMSCount());
+        transform.position = new Vector2(parentPos.x + value * Side, transform.position.y);
     }
 
-    private long CalBMSCount(float time)
+    public long CalBMSCount()
     {
-        return (long)(time * ((float)BPM / 60) * (BMSConstants.BMS_RESOLUTION / 4));
+        return (long)(audioSource.time * ((float)BPM / 60) * (BMSConstants.BMS_RESOLUTION / 4));
 
     }
 
@@ -50,7 +52,7 @@ public class TimingBar : MonoBehaviour {
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            if(value <= 0.3f && value >= -0.3f)
+            if(value <= 0.6f && value >= -0.6f)
             {
                 return 1;
             }

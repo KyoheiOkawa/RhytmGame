@@ -60,7 +60,7 @@ public class Player : MonoBehaviour {
         if (transform.position.x + 1 == Enemy[eneCount].transform.position.x)
         {
 			if (Enemy [eneCount].GetComponent<Enemy> ().Damage ()) {
-				if (eneCount != 2)
+				if (eneCount != 3)
 					eneCount++;
 			}
         }
