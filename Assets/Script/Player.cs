@@ -30,7 +30,7 @@ public class Player : MonoBehaviour {
             if (transform.position.x == maximum)
             {
                 isMoving = false;
-                GetComponent<Animator>().SetBool("isMove", isMoving);
+                //GetComponent<Animator>().SetBool("isMove", isMoving);
             }
         }
 
@@ -48,7 +48,7 @@ public class Player : MonoBehaviour {
             GetComponent<AudioSource>().PlayOneShot(yha);
             //transform.position = new Vector2(transform.position.x + 1, transform.position.y);
             isMoving = true;
-            GetComponent<Animator>().SetBool("isMove", isMoving);
+            //GetComponent<Animator>().SetBool("isMove", isMoving);
             startTime = Time.time;
             minimum = transform.position.x;
             maximum = transform.position.x + 1;
@@ -71,7 +71,7 @@ public class Player : MonoBehaviour {
 	private void Damage()
 	{
 		GetComponent<AudioSource>().PlayOneShot(ah);
-		GetComponent<Animator>().SetTrigger("Damage");
+		//GetComponent<Animator>().SetTrigger("Damage");
 	}
 
 	private void EnemyAttackDamageCheck()
