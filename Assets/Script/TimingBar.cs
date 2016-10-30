@@ -52,7 +52,7 @@ public class TimingBar : MonoBehaviour {
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            if(value <= 0.6f && value >= -0.6f)
+            if(value <= 0.3f && value >= -0.3f)
             {
                 return 1;
             }
