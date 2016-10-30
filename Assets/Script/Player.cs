@@ -30,17 +30,21 @@ public class Player : MonoBehaviour {
         for(int i = 0; i < L_enemy.Length-1; i++)
         {
             min = i;
-            for(int j = i + 1; j < L_enemy.Length; j++)
+            for (int j = i + 1; j < L_enemy.Length; j++)
             {
-                if(L_enemy[j].transform.position.x < L_enemy[min].transform.position.x)
+                if (L_enemy[j].transform.position.x < L_enemy[min].transform.position.x)
                 {
                     min = j;
                 }
+            }
                 GameObject tmp = L_enemy[min];
                 L_enemy[min] = L_enemy[i];
                 L_enemy[i] = tmp;
-            }
         }
+        //for(int i = 0; i < L_enemy.Length; i++)
+        //{
+        //    Debug.Log(L_enemy[i].gameObject.name);
+        //}
 	}
 	
 	// Update is called once per frame
