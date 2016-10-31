@@ -25,6 +25,8 @@ public class Enemy : MonoBehaviour {
 		} else {
 			isAttack = false;
 		}
+
+		//Move ();
 		//Debug.Log (isAttack);
 	}
 
@@ -62,6 +64,22 @@ public class Enemy : MonoBehaviour {
 	public bool GetIsAtttack()
 	{
 		return isAttack;
+	}
+
+	private bool M_Flg = true;
+	private int M_counter = 0;
+	private void Move()
+	{
+		if (M_counter != counter)
+			M_Flg = true;
+		if (counter % 2 == 0) {
+			M_counter = counter;
+			if (M_Flg) {
+				M_Flg = false;
+
+				transform.position = new Vector3 (transform.position.x - 1.0f, transform.position.y,0);
+			}
+		}
 	}
 
 	public bool Damage()
