@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour {
 			isAttack = false;
 		}
 
+        transform.FindChild("HP").GetComponent<TextMesh>().text = HP.ToString();
 		//Move ();
 		//Debug.Log (isAttack);
 	}

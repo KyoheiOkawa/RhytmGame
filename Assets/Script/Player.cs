@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
     public AudioClip yha;
@@ -109,7 +110,16 @@ public class Player : MonoBehaviour {
                 {
                     if (eneCount != L_enemy.Length)
                         eneCount++;
+
+                    if (eneCount == L_enemy.Length)
+                        FadeManager.Instance.LoadLevel("clear",0.3f);
+
+                    Move();
                 }
+            }
+            else
+            {
+                Move();
             }
         }
         GetComponent<AudioSource>().PlayOneShot(sore);
@@ -119,6 +129,8 @@ public class Player : MonoBehaviour {
 	private void Damage()
 	{
 		GetComponent<AudioSource>().PlayOneShot(ah);
+        Scene scene = SceneManager.GetActiveScene();
+        FadeManager.Instance.LoadLevel(scene.name, 0.3f);
 		//GetComponent<Animator>().SetTrigger("Damage");
 	}
 
